@@ -138,3 +138,7 @@ jobs:
             -H "Content-Type: application/json" \
             -H "X-GitHub-Event: push" \
             -d "$PAYLOAD"
+      - name: Force Instant Argo CD Discovery
+        run: |
+          kubectl annotate applicationset dynamic-tenant-router -n argocd \
+            argocd.argoproj.io/application-set-refresh="$(date +%s)" --overwrite
