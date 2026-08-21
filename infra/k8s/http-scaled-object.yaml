@@ -1,0 +1,24 @@
+kind: HTTPScaledObject
+apiVersion: http.keda.sh/v1alpha1
+metadata:
+  name: graceful-euler-c1b10e8a0a-scaler
+  namespace: apps-release
+spec:
+  hosts:
+    - cc1fbde45ead-in-south-01.mayson.dev
+  pathPrefixes:
+    - /us-west-1-backstractelb-67c917-coll-092b8b35e08a4aaab30bb53e6d6a2b78/ # e.g. /infallible-naveen-... graceful-euler-c1b10e8a0a/
+  scaleTargetRef:
+    name: graceful-euler-c1b10e8a0a-depl
+    kind: Deployment
+    apiVersion: apps/v1
+    service: graceful-euler-c1b10e8a0a-srv # e.g. coll-8a2a...-srv
+    port: 80
+  replicas:
+    min: 0
+    max: 10
+  scaledownPeriod: 1800 #inseconds
+  scalingMetric:
+    requestRate:
+      targetValue: 100
+      window: 1m

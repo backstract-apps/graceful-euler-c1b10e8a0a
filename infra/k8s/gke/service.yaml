@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: graceful-euler-c1b10e8a0a-srv
+  namespace: apps-release
+spec:
+  selector:
+    app: graceful-euler-c1b10e8a0a
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 7070
+  type: NodePort

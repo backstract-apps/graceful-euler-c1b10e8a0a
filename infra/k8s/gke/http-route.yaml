@@ -1,0 +1,22 @@
+apiVersion: gateway.networking.k8s.io/v1
+kind: HTTPRoute
+metadata:
+  name: graceful-euler-c1b10e8a0a-route
+  namespace: apps-release
+spec:
+  parentRefs:
+    - group: gateway.networking.k8s.io
+      kind: Gateway
+      name: lcnc-gateway
+      namespace: default
+      sectionName: https
+  hostnames:
+    - "cc1fbde45ead-in-south-02.mayson.dev"
+  rules:
+    - matches:
+        - path:
+            type: PathPrefix
+            value: /us-west-1-backstractelb-67c917-coll-092b8b35e08a4aaab30bb53e6d6a2b78
+      backendRefs:
+        - name: graceful-euler-c1b10e8a0a-srv
+          port: 80
