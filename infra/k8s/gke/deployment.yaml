@@ -11,7 +11,7 @@ metadata:
     backstract.io/token-scope: "storage.*,cache.*"
 type: Opaque
 stringData:
-  token: "PLACEHOLDER_BST_TOKEN_REPLACE_AT_RUNTIME"
+  token: "bst_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJiYWNrc3RyYWN0LXBsYXRmb3JtIiwic3ViIjoiY29sbF8wOTJiOGIzNWUwOGE0YWFhYjMwYmI1M2U2ZDZhMmI3OCIsImF1ZCI6ImJhY2tzdHJhY3QtcmVzb3VyY2VzIiwiZW52IjoicmVsZWFzZSIsImlhdCI6MTc4NzI5Nzg3MiwiZXhwIjoxNzk1MDczODcyLCJzY29wZXMiOlsic3RvcmFnZS4qIiwiY2FjaGUuKiJdLCJ0b2tlbl90eXBlIjoiYnN0Iiwib3duZXJfaWQiOiI3OTRmMWUzNmM2YzM0NGMzOTc4MjA3ZmYyNGQ4YWQ3OCJ9.9jlCl5kdNPyGcnj9N8UhahxKe-6kqebgJzGyp36DTgc"
 ---
 apiVersion: apps/v1
 kind: Deployment
